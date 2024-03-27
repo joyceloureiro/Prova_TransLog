@@ -1,0 +1,44 @@
+﻿@page "/transLog"
+@using Frontend.Models.Request
+@using Frontend.Models.Response
+
+<h3>TransLog</h3>
+
+<EditForm Model="_freteRequest">
+    <DataAnnotationsValidator />
+    <div class="row">
+        <div class="col-4">
+            <label>Distancia em Quilometros: </label>
+            <InputNumber @bind-Value="_freteRequest.Quilometro" class="form-control" />
+            <ValidationMessage For="() => _freteRequest.Quilometro" />
+        </div>
+        <div class="col-4">
+            <label>Peso em quilogramas da carga,:</label>
+            <InputNumber @bind-Value="_freteRequest.Peso" class="form-control" />
+            <ValidationMessage For="() => _freteRequest.Peso" />
+        </div>
+        <div class="col-4">
+            <label>Altura da carga:</label>
+            <InputNumber @bind-Value="_freteRequest.Altura" class="form-control" />
+            <ValidationMessage For="() => _freteRequest.Altura" />
+        </div>
+        <div class="col-4">
+            <label>Largura da carga:</label>
+            <InputNumber @bind-Value="_freteRequest.Largura" class="form-control" />
+            <ValidationMessage For="() => _freteRequest.Largura" />
+        </div>
+        <div class="col-4">
+            <label>Comprimento da carga:</label>
+            <InputNumber @bind-Value="_freteRequest.Comprimento" class="form-control" />
+            <ValidationMessage For="() => _freteRequest.Comprimento" />
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-outline-primary mt-2">Calcular Frete</button>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    private FreteRequest _freteRequest { get; set; } = new();
+    private FreteResponse _freteResponse { get; set; } = new();
+}
