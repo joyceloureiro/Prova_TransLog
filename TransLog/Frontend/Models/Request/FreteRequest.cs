@@ -7,21 +7,20 @@ namespace Frontend.Models.Request
     {
 
         [Required(ErrorMessage = "Quilometro é obrigatório")]
-      
-      
-        public decimal Quilometro { get; set; }
+              
+        public decimal? Quilometro { get; set; }
 
         [Required(ErrorMessage = "Peso é obrigatório")]
-        public decimal Peso { get; set; }
+        public decimal? Peso { get; set; }
 
         [Required(ErrorMessage = "Largura é obrigatório")]
-        public decimal Largura { get; set; }
+        public decimal? Largura { get; set; }
 
         [Required(ErrorMessage = "Altura é obrigatório")]
-        public decimal Altura { get; set; }
+        public decimal? Altura { get; set; }
 
         [Required(ErrorMessage = "Comprimento é obrigatório")]
-        public decimal Comprimento { get; set; }
+        public decimal? Comprimento { get; set; }
 
 
     }

@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "05uh6IpZR5gTcrJyaOTtuEvXum/U/kNBPnSjVejE1IcPzDaUSgxPqOc6YmWnzRCdY5j2gdauC95TZHzBVAlgpA==",
+  "dgSpecHash": "QqocJqcmlebNivdYkmLMYGZHT5P8qyPYyazoII2Qu0MkKZRQLv8Yz1JsJtAjWImrdMY9gF4SVPhIceor3CyRMg==",
   "success": true,
   "projectFilePath": "D:\\TransLog\\TransLog\\Backend\\Backend.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Senai.CEPEAS21104175\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Senai.CEPEAS21104175\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Senai.CEPEAS21104175\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Senai.CEPEAS21104175\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Senai.CEPEAS21104175\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Senai.CEPEAS21104175\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

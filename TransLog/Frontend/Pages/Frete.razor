@@ -4,7 +4,7 @@
 
 <h3>TransLog</h3>
 
-<EditForm Model="_freteRequest">
+<EditForm Model="_freteRequest" OnValidSubmit="GerarFrete">
     <DataAnnotationsValidator />
     <div class="row">
         <div class="col-4">
@@ -13,7 +13,7 @@
             <ValidationMessage For="() => _freteRequest.Quilometro" />
         </div>
         <div class="col-4">
-            <label>Peso em quilogramas da carga,:</label>
+            <label>Peso em quilogramas da carga:</label>
             <InputNumber @bind-Value="_freteRequest.Peso" class="form-control" />
             <ValidationMessage For="() => _freteRequest.Peso" />
         </div>
@@ -38,7 +38,50 @@
     </div>
 </EditForm>
 
+
+@if (exibirFrete)
+{
+    <div class="row mt-4 p-5">
+        <div  class="h-100 text-center p-5 rounded-3">        
+             <label>Custo Frete:@_freteResponse.CustoFrete</label>
+            
+                <h2>@_freteResponse.Quilometro</h2>
+                <h2>@_freteResponse.Peso</h2>
+                <h2>@_freteResponse.Largura</h2>
+                <h2>@_freteResponse.Altura</h2>
+                <h2>@_freteResponse.Comprimento</h2>
+         
+        </div>
+    </div>
+}
+
 @code {
     private FreteRequest _freteRequest { get; set; } = new();
     private FreteResponse _freteResponse { get; set; } = new();
+    private bool exibirFrete = false;
+  
+    private async Task GerarFrete()
+    {
+        //lembre de sempre alterar a url da api para a url, use swagger para verificar a url
+        var apiUrl = $"https://localhost:7299/Swagger/transLog/obter?quilometro={_freteRequest.Quilometro}&peso={_freteRequest.Peso}&largura={_freteRequest.Largura}&altura={_freteRequest.Altura}&comprimento={_freteRequest.Comprimento}";
+        var http = new HttpClient();
+
+        try
+        {
+            //faça um httpget para a api passando o nome e a data de nascimento o retorno é um objeto do tipo CarteirinhaResponse
+            _freteResponse = await http.GetFromJsonAsync<FreteResponse>(apiUrl);
+
+            //Verifica se existe um valor para a cor de fundo, se existir exibe a carteirinha
+            if (_freteResponse.CustoFrete > 1)
+            {
+                exibirFrete = true;
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
+    }
 }
